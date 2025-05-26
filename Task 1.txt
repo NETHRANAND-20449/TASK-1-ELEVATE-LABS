@@ -1,0 +1,92 @@
+Task 1
+# Network Scanning Assignment
+
+**Student Name:** [NETHRANAND MALIGE]  
+**Course:** Network Security Fundamentals  
+**Assignment:** Task 1 - Local Network Port Scanning  
+**Date:** May 26, 2025
+
+## Assignment Objective
+Scan my local network to find open ports on devices and understand network exposure using Nmap.
+
+## Tools Used
+- **Nmap 7.97** - Network scanning tool
+- **Kali Linux** - Operating system
+- **Terminal** - Command line interface
+
+## My Network Setup
+- **My IP Address:** 192.168.1.105
+- **Network Range:** 192.168.1.0/24
+- **Router IP:** 192.168.1.1
+
+## Commands I Used
+
+### Finding My Network Range
+```bash
+hostname -I
+route -n
+```
+
+### TCP SYN Scan Command
+```bash
+nmap -sS 192.168.1.0/24
+```
+
+## Scan Results
+
+### Devices Found on My Network
+
+**Device 1: Router (192.168.1.1)**
+- **Open Ports:** 80/tcp (http), 443/tcp (https)
+- **Services:** Web management interface
+- **Notes:** This is my home router's admin panel
+
+**Device 2: My Computer (192.168.1.105)**
+- **Open Ports:** 22/tcp (ssh)
+- **Services:** SSH remote access
+- **Notes:** My main workstation
+
+**Device 3: Smart TV (192.168.1.110)**
+- **Open Ports:** 8080/tcp (http-proxy)
+- **Services:** Media streaming
+- **Notes:** Living room smart TV
+
+## What I Learned
+
+### Port Scanning Concepts
+- **TCP SYN Scan:** Sends SYN packets without completing handshake (stealth)
+- **Open Ports:** Ports that accept connections
+- **Filtered Ports:** Ports blocked by firewall
+- **IP Ranges:** Using /24 to scan whole subnet (256 addresses)
+
+### Network Reconnaissance
+- Found 3 active devices on my home network
+- Identified services running on each device
+- Discovered potential security risks
+
+### Network Security Basics
+- **Port 22:** SSH can be risky if not secured
+- **Port 80:** Unencrypted web traffic
+- **Port 443:** Secure web traffic (better)
+- **Open ports = attack surface**
+
+## Security Observations
+
+### Potential Risks Found
+1. **SSH on my computer** - Could be attacked if password is weak
+2. **Router web interface** - Default passwords are dangerous
+3. **Smart TV ports** - IoT devices often have vulnerabilities
+
+### Recommendations
+- Change default router password
+- Use strong SSH keys instead of passwords
+- Update smart TV firmware regularly
+- Consider closing unused ports
+
+## Problems I Faced
+1. **First scan mistake:** Accidentally scanned facebook.com instead of local network
+2. **Permission issues:** Needed sudo for SYN scan
+3. **Network discovery:** Had to figure out my IP range first
+
+## Conclusion
+This assignment taught me how to discover devices on my network and identify open ports. I found that even my small home network has several entry points that could be security risks. The TCP SYN scan method is effective for finding open services without being detected easily.
