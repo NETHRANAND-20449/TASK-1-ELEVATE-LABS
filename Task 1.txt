@@ -2,7 +2,7 @@ Task 1
 # Network Scanning Assignment
 
 **Student Name:** [NETHRANAND MALIGE]  
-**Course:** Network Security Fundamentals  
+**Course:** CYBER SECURITY INTERNSHIP   
 **Assignment:** Task 1 - Local Network Port Scanning  
 **Date:** May 26, 2025
 
